@@ -16,7 +16,7 @@ mlr --csv cut -f "Codice Provincia (Storico)(1)","Codice NUTS2 2021 (3)" \
   then uniq -a \
   then put -S '$COD_PROV=sub($COD_PROV,"^0+","")' "$folder"/risorse/Codici-statistici-e-denominazioni-al-01_01_2021.csv >"$folder"/processing/codici.csv
 
-# estati dati anagrafici NUTS
+# estrai dati anagrafici NUTS
 mlr --csv rename Description,Nome then cut -f NUTS-Code,Nome "$folder"/risorse/codiciNUTS.csv >"$folder"/processing/codiciNUTS.csv
 
 ### file geografici generalizzati ###
