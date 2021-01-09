@@ -5,6 +5,12 @@ La **suddivisione territoriale statistica standard** in Europa (EUROSTAT) è la 
 Una fonte classica per i file geografici con i limiti amministrativi è [**ISTAT**](https://www.istat.it/it/archivio/222527), che però **non pubblica** ad esempio **file "tagliati" secondo `NUTS2`** (è appunto il livello gerarchico regionale).<br>
 Questo *repository* per raccogliere alcuni file geografici suddivisi secondo NUTS (al momento soltanto i 2).
 
+Ho chiesto ad ISTAT di pubblicare file geografici anche secondo `NUTS2`: al momento non li pubblicheranno ma mi hanno suggerito una modalità per farlo in autonomia e si sono detti interessati a farlo nel futuro.<br>
+È mio avviso fondamentale per due ragioni:
+
+- le [API ISTAT SDMX](https://www.istat.it/it/metodi-e-strumenti/web-service-sdmx) espongono le informazioni geografiche, secondo NUTS;
+- come detto sopra, in alcuni contesti (sanità, scuola, protezione civile, ecc.) il taglio geografico non è quello regionale "classico", ma coincide proprio con il `NUTS2`.
+
 ## NUTS2
 
 A partire dai [file geografici ISTAT](https://www.istat.it/it/archivio/222527), e dall'[elenco dei codici delle suddivisioni statistiche](https://www.istat.it/storage/codici-unita-amministrative/Elenco-codici-statistici-e-denominazioni-delle-unita-territoriali.zip) (sempre di ISTAT), sono stati generati dei [file geografici](https://github.com/ondata/covid19italia/tree/master/risorse/fileGeografici) raggruppati per codice `NUTS2`.
