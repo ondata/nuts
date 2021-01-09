@@ -22,5 +22,5 @@ EUROSTAT pubblica i [file geografici con le suddivisioni NUTS](https://ec.europa
 
 Due script correlati:
 
-- [`risorse.sh`](risorse.sh), per scaricare le risorse di base per la generazioni dei nuovi file;
+- [`risorse.sh`](risorse.sh), per scaricare le risorse di base per la generazioni dei nuovi file. Va lanciato prima del successivo;
 - [`NUTS2.sh`](NUTS2.sh), per generare i file geografici con questo "taglio".
