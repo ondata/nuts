@@ -1,5 +1,9 @@
 #!/bin/bash
 
+### requisiti ###
+# Miller https://github.com/johnkerl/miller
+### requisiti ###
+
 set -x
 
 folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
