@@ -36,6 +36,10 @@ mapshaper-xl "$folder"/processing/NUTS2.shp -join "$folder"/processing/codiciNUT
 ogr2ogr "$folder"/processing/NUTS2.shp "$folder"/processing/tmp.shp
 rm "$folder"/processing/tmp.*
 
+# applica 0 padding a colonna COD_REG
+ogrinfo -sql "ALTER TABLE NUTS2 ALTER COLUMN COD_REG TYPE character(2)" "$folder"/processing/NUTS2.shp
+ogrinfo -dialect sqlite -sql "UPDATE NUTS2 SET COD_REG = printf('%02d', COD_REG)" "$folder"/processing/NUTS2.shp
+
 ### file geografici non generalizzati ###
 
 rm "$folder"/processing/Com01012020_.*
@@ -51,6 +55,12 @@ rm "$folder"/processing/tmp.*
 # aggiungi dati anagrafici NUTS2
 mapshaper-xl "$folder"/processing/NUTS2_g.shp -join "$folder"/processing/codiciNUTS.csv keys=NUTS2,NUTS-Code -o "$folder"/processing/tmp.shp
 ogr2ogr "$folder"/processing/NUTS2_g.shp "$folder"/processing/tmp.shp
+
+# applica 0 padding a colonna COD_REG
+ogrinfo -sql "ALTER TABLE NUTS2_g ALTER COLUMN COD_REG TYPE character(2)" "$folder"/processing/NUTS2_g.shp
+ogrinfo -dialect sqlite -sql "UPDATE NUTS2_g SET COD_REG = printf('%02d', COD_REG)" "$folder"/processing/NUTS2_g.shp
+
+# crea geojson
 ogr2ogr -f geojson -lco RFC7946=YES "$folder"/processing/NUTS2_g.geojson "$folder"/processing/NUTS2_g.shp
 
 # pulizia
