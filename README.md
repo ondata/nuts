@@ -3,7 +3,7 @@
 La **suddivisione territoriale statistica standard** in Europa (EUROSTAT) è la [**NUTS**](https://www.wikiwand.com/it/Nomenclatura_delle_unit%C3%A0_territoriali_statistiche). In Italia è di particolare interesse in alcuni contesti, come ad esempio quello della **sanità**, dove è suddivisa non nelle 20 regioni, ma nelle 21 zone `NUTS2` (il Trentino-Alto Adige suddiviso nelle due province autonome).
 
 Una fonte classica per i file geografici con i limiti amministrativi è [**ISTAT**](https://www.istat.it/it/archivio/222527), che però **non pubblica** ad esempio **file "tagliati" secondo `NUTS2`** (è appunto il livello gerarchico regionale).<br>
-Questo *repository* per raccogliere alcuni file geografici suddivisi secondo NUTS.
+Questo *repository* per raccogliere alcuni file geografici suddivisi secondo NUTS (al momento soltanto i 2).
 
 ## NUTS2
 
@@ -19,3 +19,8 @@ EUROSTAT pubblica i [file geografici con le suddivisioni NUTS](https://ec.europa
 
 - sono generati a partire dai file ISTAT, quindi esiste anche quello con **più dettaglio geografico**, che su EUROSTAT non è presente;
 - qui sono presenti anche i **codici regionali ISTAT**.
+
+Due script correlati:
+
+- [`risorse.sh`](risorse.sh), per scaricare le risorse di base per la generazioni dei nuovi file;
+- [`NUTS2.sh`](NUTS2.sh), per generare i file geografici con questo "taglio".
