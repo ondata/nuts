@@ -8,12 +8,12 @@ Questo *repository* per raccogliere alcuni file geografici suddivisi secondo NUT
 Abbiamo chiesto ad ISTAT di pubblicare file geografici anche secondo `NUTS2`: al momento non li pubblicheranno ma ci hanno suggerito una modalità per farlo in autonomia e si sono detti interessati a farlo nel futuro.<br>
 È fondamentale per due ragioni:
 
-- le [API ISTAT SDMX](https://www.istat.it/it/metodi-e-strumenti/web-service-sdmx) espongono le informazioni geografiche, secondo NUTS (📚 qui [la nostra guida](https://ondata.github.io/guida-api-istat/));
+- le [API ISTAT SDMX](https://www.istat.it/it/metodi-e-strumenti/web-service-sdmx) espongono le informazioni geografiche, secondo NUTS (📚 qui [la nostra guida](https://ondata.github.io/guida-api-istat/)). Attenzione quelli qui esposti sono i codici nella codifica del 2006;
 - come detto sopra, in alcuni contesti (sanità, scuola, protezione civile, ecc.) il taglio geografico non è quello regionale "classico", ma coincide proprio con il `NUTS2`.
 
 ## NUTS2
 
-A partire dai [file geografici ISTAT](https://www.istat.it/it/archivio/222527), e dall'[elenco dei codici delle suddivisioni statistiche](https://www.istat.it/storage/codici-unita-amministrative/Elenco-codici-statistici-e-denominazioni-delle-unita-territoriali.zip) (sempre di ISTAT), sono stati generati dei [file geografici](https://github.com/ondata/covid19italia/tree/master/risorse/fileGeografici) raggruppati per codice `NUTS2`.
+A partire dai [file geografici ISTAT](https://www.istat.it/it/archivio/222527), e dall'[elenco dei codici delle suddivisioni statistiche](https://www.istat.it/storage/codici-unita-amministrative/Elenco-codici-statistici-e-denominazioni-delle-unita-territoriali.zip) (sempre di ISTAT), sono stati generati dei [file geografici](https://github.com/ondata/covid19italia/tree/master/risorse/fileGeografici) raggruppati per codice `NUTS2` (aggiornamento 2016).
 
 Nel dettaglio:
 
