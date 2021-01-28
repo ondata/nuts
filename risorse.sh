@@ -33,8 +33,8 @@ mlr -I --csv --ifs ";" clean-whitespace "$folder"/risorse/Codici-statistici-e-de
 
 ### limiti geografici non generalizzati ###
 
-URLshapefile_g="https://www.istat.it/storage/cartografia/confini_amministrativi/generalizzati/Limiti01012020_g.zip"
-nomiShapefile_g="Limiti01012020_g.zip"
+URLshapefile_g="https://www.istat.it/storage/cartografia/confini_amministrativi/generalizzati/Limiti01012021_g.zip"
+nomiShapefile_g="Limiti01012021_g.zip"
 
 if [[ ! -f "$folder"/risorse/"$nomiShapefile_g" ]]; then
   curl -kL "$URLshapefile_g" >"$folder"/risorse/"$nomiShapefile_g"
@@ -44,8 +44,8 @@ fi
 yes | unzip "$folder"/risorse/"$nomiShapefile_g" -d "$folder"/risorse
 
 ### limiti geografici non generalizzati ###
-URLshapefile="https://www.istat.it/storage/cartografia/confini_amministrativi/non_generalizzati/Limiti01012020.zip"
-nomiShapefile="Limiti01012020.zip"
+URLshapefile="https://www.istat.it/storage/cartografia/confini_amministrativi/non_generalizzati/Limiti01012021.zip"
+nomiShapefile="Limiti01012021.zip"
 
 if [[ ! -f "$folder"/risorse/"$nomiShapefile" ]]; then
   curl -kL "$URLshapefile" >"$folder"/risorse/"$nomiShapefile"

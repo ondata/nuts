@@ -21,11 +21,11 @@ mlr --csv rename Description,Nome then cut -f NUTS-Code,Nome "$folder"/risorse/c
 
 ### file geografici generalizzati ###
 
-rm "$folder"/processing/Com01012020_WGS84.*
-find "$folder"/risorse/Limiti01012020 -name "Com01012020_WGS84.*" | xargs -I {} sh -c "cp {} $folder/processing"
+rm "$folder"/processing/Com01012021_WGS84.*
+find "$folder"/risorse/Limiti01012020 -name "Com01012021_WGS84.*" | xargs -I {} sh -c "cp {} $folder/processing"
 
 # JOIN tra file geofrafici e codici NUTS2
-mapshaper-xl "$folder"/processing/Com01012020_WGS84.shp -join "$folder"/processing/codici.csv keys=COD_PROV,COD_PROV -o "$folder"/processing/tmp.shp
+mapshaper-xl "$folder"/processing/Com01012021_WGS84.shp -join "$folder"/processing/codici.csv keys=COD_PROV,COD_PROV -o "$folder"/processing/tmp.shp
 
 # dissolvi poligono per codice NUTS
 mapshaper-xl "$folder"/processing/tmp.shp -dissolve2 NUTS2 copy-fields=COD_RIP,COD_REG -o "$folder"/processing/NUTS2.shp
@@ -42,11 +42,11 @@ ogrinfo -dialect sqlite -sql "UPDATE NUTS2 SET COD_REG = printf('%02d', COD_REG)
 
 ### file geografici non generalizzati ###
 
-rm "$folder"/processing/Com01012020_.*
-find "$folder/risorse/Limiti01012020_g" -name "Com01012020_g_WGS84*" | xargs -I {} sh -c "cp {} $folder/processing"
+rm "$folder"/processing/Com01012021_.*
+find "$folder/risorse/Limiti01012021_g" -name "Com01012021_g_WGS84*" | xargs -I {} sh -c "cp {} $folder/processing"
 
 # JOIN tra file geofrafici e codici NUTS2
-mapshaper-xl "$folder"/processing/Com01012020_g_WGS84.shp -join "$folder"/processing/codici.csv keys=COD_PROV,COD_PROV -o "$folder"/processing/tmp.shp
+mapshaper-xl "$folder"/processing/Com01012021_g_WGS84.shp -join "$folder"/processing/codici.csv keys=COD_PROV,COD_PROV -o "$folder"/processing/tmp.shp
 
 # dissolvi poligono per codice NUTS
 mapshaper-xl "$folder"/processing/tmp.shp -dissolve2 NUTS2 copy-fields=COD_RIP,COD_REG -o "$folder"/processing/NUTS2_g.shp
@@ -65,4 +65,4 @@ ogr2ogr -f geojson -lco RFC7946=YES "$folder"/processing/NUTS2_g.geojson "$folde
 
 # pulizia
 rm "$folder"/processing/tmp.*
-rm "$folder"/processing/Com01012020_*
+rm "$folder"/processing/Com01012021_*
